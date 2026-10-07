@@ -51,14 +51,16 @@
 <main>
 
 <h1>Privacy Policy</h1>
-<p class="updated">Dirt Bike Racing: Motocross Game &middot; Last updated 30 September 2026</p>
+<p class="updated">Dirt Bike Racing: Motocross Game &middot; Last updated 7 October 2026</p>
 
 <p>This policy explains what happens to information when you play Dirt Bike Racing:
 Motocross Game (&ldquo;the game&rdquo;), published by Bogdan Veres (&ldquo;we&rdquo;).</p>
 
 <div class="note">
   <strong>The short version.</strong> The game has no account of its own and no sign-up.
-  We never ask for your name, email address, or phone number. Your progress is stored on
+  We never ask for your email address or phone number. The only name the game handles is
+  the rider name you type, and it leaves your phone only for a multiplayer race on your
+  Wi-Fi or when you share or race a friend's challenge. Your progress is stored on
   your own device and in your own iCloud or Google account. Signing in to Game Center or
   Google Play Games is optional and adds achievements, weekly leaderboards and, on Android,
   a cloud save. The game shows ads, sells in-app purchases, and counts anonymous gameplay
@@ -101,6 +103,36 @@ Motocross Game (&ldquo;the game&rdquo;), published by Bogdan Veres (&ldquo;we&rd
     <td>Google Analytics for Firebase. Sent only where consent allows it (see section 7)</td>
   </tr>
   <tr>
+    <td>A randomly generated Firebase installation ID, the app version, platform and
+      language, when the game asks for its current settings</td>
+    <td>To fetch game settings that can change without an update &mdash; race rewards, how
+      often ads and offers appear, multiplayer rules and whether challenges are on (the keys
+      <code>dbr_economy</code>, <code>dbr_ads</code>, <code>dbr_offers</code>,
+      <code>dbr_mp</code> and <code>dbr_challenges</code>). Nothing about you or your play is
+      sent</td>
+    <td>Google Firebase Remote Config</td>
+  </tr>
+  <tr>
+    <td>Your rider name, machine and position on track, during a local multiplayer race</td>
+    <td>So the friends you are racing see you on their screens</td>
+    <td>Only the phones in that race, on the same Wi-Fi network. It never leaves that
+      network and is not sent to us</td>
+  </tr>
+  <tr>
+    <td>When you challenge a friend: your recorded run on that race (the bike's path and
+      timing, not your inputs), your rider name, machine, race and finish time, under a
+      seven-character code. When you race a friend's challenge: your rider name, machine and
+      best time on it, under a random identifier made for that one challenge, which links
+      to nothing else on your phone</td>
+    <td>So the friends you share the code with can race your ghost, and so you can see how
+      they did</td>
+    <td>Google Cloud Firestore, in the developer's Firebase project. Anyone holding the code
+      can read the challenge and its results. A challenge can no longer be opened 30 days
+      after it was shared; the challenge and the friends' results stay stored and readable
+      with the code until removed on request (see section 13). Not used for advertising or
+      tracking</td>
+  </tr>
+  <tr>
     <td>Purchase and usage information for a refund request</td>
     <td>So Apple can make an informed decision when you ask it for a refund</td>
     <td>Apple, through RevenueCat, only when a refund is requested (see section 6)</td>
@@ -113,7 +145,8 @@ Motocross Game (&ldquo;the game&rdquo;), published by Bogdan Veres (&ldquo;we&rd
   <li>We do not ask you to create an account with us or give us any contact details. Game
     Center and Google Play Games are Apple&rsquo;s and Google&rsquo;s own accounts, and signing
     in to them is optional.</li>
-  <li>We do not collect your name, email address, phone number, or precise location.</li>
+  <li>We do not collect your real name, email address, phone number, or precise location.
+    The rider name you type is stored only when you share or race a challenge (section 1).</li>
   <li>We do not sell your personal information.</li>
   <li>We never see your payment card details. Payment is handled entirely by Apple or Google.</li>
   <li>We have no access to the copy of your save that is kept in your iCloud or Google account.</li>
